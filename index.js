@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import path from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
-import color from 'colors';
+import  Color  from 'colors';
 import ApiError from './src/util/ApiError.js';
 import connectDB from './src/db/mongoose.js'
 import errorHandling from './src/middleware/expressError.middleware.js';
@@ -28,7 +28,8 @@ async function server () {
    
    try {
      const port = process.env.PORT || 5000;
-    await connectDB;
+     connectDB;
+     console.log(Color.green('enjoy ;)'))
     app.listen(port , console.log(`http://localhost:${port}`))
    } catch (error) {
         console.trace(error)
