@@ -1,0 +1,24 @@
+{
+  "name": "vehiclesystem_sales",
+  "version": "1.0.0",
+  "description": "VehicleSystem_Sales is the backend component of theVehicleSystem_Sales project, a comprehensive platform for buying and selling automobiles and motorcycles. This GitHub repository houses the backend codebase responsible for handling data storage, authentication, API endpoints, and business logic.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "mohamedo7x",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0"
+  }
+}
