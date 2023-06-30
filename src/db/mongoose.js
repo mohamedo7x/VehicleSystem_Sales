@@ -11,7 +11,7 @@ dotenv.config();
 .then((data)=> {
     console.log(`Data Base Connected ${color.green(data.connection.host)}`)
 }).catch((err)=> {
-    console.log(err)
+    console.log(`DB ERROR ` +color.red(err))
     process.exit(1)
 })
 

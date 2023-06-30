@@ -1,11 +1,16 @@
 import asyncHandler from '../middleware/async.js'
+import User from '../schema/User.schema.js';
 
 const register =asyncHandler(async(req , res) => {
-console.log('12222222');
+    res.json({
+        res : 'PERFECTO'
+    })
 })
 
 const login =asyncHandler(async(req , res) => {
-
+    res.json({
+        res : 'PERFECTO'
+    })
 })
 
 

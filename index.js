@@ -3,7 +3,10 @@ import * as dotenv from 'dotenv';
 import path from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
+import color from 'colors';
+import ApiError from './src/util/ApiError.js';
 import connectDB from './src/db/mongoose.js'
+import errorHandling from './src/middleware/expressError.middleware.js';
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename);
 const app = express();
@@ -17,8 +20,10 @@ dotenv.config();
 /* Routes */
 import AuthRoute from './src/routes/auth.route.js';
 app.use(`/${process.env.API}/auth` , AuthRoute);
-
-
+app.use('*' , (req , res , next)=> {
+   next(new ApiError(`Route ${req.url}  Not exisit` , 404))
+})
+app.use(errorHandling);
 async function server () {
    
    try {
