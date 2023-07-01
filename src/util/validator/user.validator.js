@@ -23,13 +23,7 @@ const UserValidation = [
             }
             return true;
         }),
-    body('password').notEmpty().withMessage('Password filed requierd').isLength({ min: 4, max: 20 }).withMessage('invalid passowrd').custom(value => {
-        if (value.trim().length === 0) {
-            return Promise.reject(new ApiError('Invalid Password', 401));
-        }
-        return true;
-
-    }),
+    body('password').trim().notEmpty().withMessage('Password filed requierd').isLength({ min: 4, max: 20 }).withMessage('invalid passowrd'),
     body('email').notEmpty().withMessage('Email filed requierd').isEmail().trim().withMessage('email not valid').custom(async value => {
         if (await UserShema.findOne({ email: value })) {
             return Promise.reject(new ApiError('Email already exists'), 401)
@@ -43,19 +37,13 @@ const UserValidation = [
 //@desc Validation check before Login
 //@element [username , password ]
 const LoginValidation = [
-    body('password').notEmpty().withMessage('Password filed requierd').isLength({ min: 4, max: 20 }).withMessage('invalid passowrd').custom(value => {
-        if (value.trim().length === 0) {
-            return Promise.reject(new ApiError('Invalid Password', 401));
-        }
-        return true;
-
-    }),
-    body('username').notEmpty().withMessage('UserName filed requierd').isLength({
+    body('password').notEmpty().withMessage('Password filed requierd').isLength({ min: 4, max: 20 }).withMessage('invalid passowrd'),
+    body('username').trim().notEmpty().withMessage('UserName filed requierd').isLength({
         min: 3,
     }).withMessage('Invalid username to small')
         .isLength({ max: 10 }).withMessage('Invalid username to long')
         .toLowerCase()
-        .trim()
+        
     , Vlaidation
 ]
 
