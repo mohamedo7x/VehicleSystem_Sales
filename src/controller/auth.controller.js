@@ -13,8 +13,6 @@ const register = asyncHandler(async (req, res) => {
 })
 
 const login = async (req, res, next) => {
-
-
     const user = await UserShcema.findOne({ username: req.body.username });
     if (user === null) {
         return next(new ApiError('Username Or Password Not correct', 400))

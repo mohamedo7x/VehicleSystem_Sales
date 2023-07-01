@@ -19,7 +19,12 @@ dotenv.config();
 
 /* Routes */
 import AuthRoute from './src/routes/auth.route.js';
+import CategorieRoute from './src/routes/categorie.route.js'
+
 app.use(`/${process.env.API}/auth` , AuthRoute);
+app.use(`/${process.env.API}/categorie` , CategorieRoute);
+
+
 app.use('*' , (req , res , next)=> {
    next(new ApiError(`Route ${req.url}  Not exisit` , 404))
 })

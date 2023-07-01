@@ -8,7 +8,7 @@ const protectRoute = async (req, res, next) => {
         if (!head) {
             return next(new ApiError('Token NotFound', 400))
         }
-        const token = JWT.verify(head.split(' ')[1], process.env.SECRET_KEY);
+        const token =await JWT.verify(head.split(' ')[1], process.env.SECRET_KEY);
         if (!token) {
             return next(new ApiError('Invalid Token', 400))
         }
@@ -26,26 +26,17 @@ const protectRoute = async (req, res, next) => {
 
 const acess =async (req, res, next) => {
   try {
-    const head = req.headers.authorization;
-    if (!head) {
-        return next(new ApiError('Token NotFound', 400))
-    }
-    const token = JWT.verify(head.split(' ')[1], process.env.SECRET_KEY);
-    if (!token) {
-        return next(new ApiError('Invalid Token', 400))
-    }
-    const user = await UserSchema.findOne({username : token.username});
-    if (user === null) {
-        return next(new ApiError('Bad Token User Not Found', 400))
-    }
+        const token =await JWT.verify(req.headers.authorization.split(' ')[1], process.env.SECRET_KEY);
     if(token.isAdmin === false)
     {
         return next(new ApiError('unauthenticated' , 400))
     }
     next();
   } catch (error) {
-    console.log(error)
+    next(error)
   }
+
+  
     
 }
 export {
