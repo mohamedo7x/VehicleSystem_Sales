@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(express.json())
 app.use(cors());
+app.use(express.static(path.join(__dirname , 'images')) )
 dotenv.config();
 
 
@@ -20,9 +21,11 @@ dotenv.config();
 /* Routes */
 import AuthRoute from './src/routes/auth.route.js';
 import CategorieRoute from './src/routes/categorie.route.js'
+import SubCategorieRoute from './src/routes/Subcategorie.route.js'
 
 app.use(`/${process.env.API}/auth` , AuthRoute);
 app.use(`/${process.env.API}/categorie` , CategorieRoute);
+app.use(`/${process.env.API}/subcategorie` , SubCategorieRoute);
 
 
 app.use('*' , (req , res , next)=> {

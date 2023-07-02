@@ -16,7 +16,7 @@ const protectRoute = async (req, res, next) => {
         if (user === null) {
             return next(new ApiError('Bad Token User Not Found', 400))
         }
-
+        req.user = token;
         next();
     } catch (error) {
       console.log(error)
