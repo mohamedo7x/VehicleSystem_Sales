@@ -40,7 +40,7 @@ async function server () {
      console.log(Color.green('enjoy ;)'))
     app.listen(port , console.log(`http://localhost:${port}`))
    } catch (error) {
-        console.trace(error)
+        console.log(error)
    }
    
     

@@ -15,7 +15,7 @@ router.route('/').post(protectRoute , acess ,uploadOne , Edit_IMG ,  Create_SubC
 // @desc       Update subcategorie
 // @route      PUT /api/v1/subcategorie:id
 // @access     Private
-router.route('/:id').put(protectRoute , acess ,IsValidId  , updateSubCategorie ,If_Id_exisit, update);
+router.route('/:id').put(protectRoute , acess ,IsValidId  ,uploadOne,Edit_IMG  , updateSubCategorie ,If_Id_exisit,update);
 
 
 // @desc       Delete subCategorie
