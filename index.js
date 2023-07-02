@@ -23,11 +23,13 @@ import AuthRoute from './src/routes/auth.route.js';
 import CategorieRoute from './src/routes/categorie.route.js'
 import SubCategorieRoute from './src/routes/Subcategorie.route.js'
 import ProdcutRoute from './src/routes/product.route.js'
+import UserRoute from './src/routes/user.route.js'
 
 app.use(`/${process.env.API}/auth` , AuthRoute);
 app.use(`/${process.env.API}/categorie` , CategorieRoute);
 app.use(`/${process.env.API}/subcategorie` , SubCategorieRoute);
 app.use(`/${process.env.API}/product` , ProdcutRoute);
+app.use(`/${process.env.API}/user` , UserRoute);
 
 
 app.use('*' , (req , res , next)=> {
