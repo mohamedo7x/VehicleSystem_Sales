@@ -1,4 +1,4 @@
 *.env
 /node_modules
-images/subcategorie/*
-images/Product/*
+src/images/subcategorie/*
+src/images/Product/*
