@@ -1,0 +1,636 @@
+{
+	"info": {
+		"_postman_id": "8cf9553a-b2a0-4e28-9017-cc230a9bbf13",
+		"name": "VehSys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25755634"
+	},
+	"item": [
+		{
+			"name": "/auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"mscx\",\r\n    \"password\" : \"slamk22\",\r\n    \"email\" : \"dosi@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main_url}}/auth/register",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODIwNTcwOCwiZXhwIjoxNjg4MjkyMTA4fQ.i_c5lNsh5HOHRXRdQoDMfPsqckC3sgE2a0i54qYVrnw",
+								"description": "TOKEN",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"mo7x\",\r\n    \"password\" : \"Salamk88\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main_url}}/auth/login",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/categorie",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODIxMjYzNiwiZXhwIjoxNjg4Mjk5MDM2fQ.YJdxYBg-lQm_ZFf5OgJWTDjMxQTXahwPiqpRNrgXvqc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Motorcycle\",\r\n    \"description\" : \"this contain difrrent of categories\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main_url}}/categorie",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"categorie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODIxMjYzNiwiZXhwIjoxNjg4Mjk5MDM2fQ.YJdxYBg-lQm_ZFf5OgJWTDjMxQTXahwPiqpRNrgXvqc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Hamed\",\r\n    \"description\" : \"Locasl\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main_url}}/categorie/id",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"categorie",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{main_url}}/categorie?page=1&limit=6",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"categorie"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "default 1"
+								},
+								{
+									"key": "limit",
+									"value": "6",
+									"description": "default 5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/categorie/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"categorie",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODIxMjYzNiwiZXhwIjoxNjg4Mjk5MDM2fQ.YJdxYBg-lQm_ZFf5OgJWTDjMxQTXahwPiqpRNrgXvqc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/categorie/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"categorie",
+								"id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/subcategorie",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODMwMTM2OSwiZXhwIjoxNjg4Mzg3NzY5fQ.Q4_klciVpzsj3x6bdQJ2DNQB6s38-qrWMfG3PdDIhyo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/moham/OneDrive/Desktop/xx.PNG"
+								},
+								{
+									"key": "categorie",
+									"value": "64a03709522c240b92ceb5b7",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "VOLVO",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Module X Vendorc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODIxMjYzNiwiZXhwIjoxNjg4Mjk5MDM2fQ.YJdxYBg-lQm_ZFf5OgJWTDjMxQTXahwPiqpRNrgXvqc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "BMW",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/moham/OneDrive/Desktop/1.PNG"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{main_url}}/subcategorie/64a1619f4065397ec049e60a",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"subcategorie",
+								"64a1619f4065397ec049e60a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODIxMjYzNiwiZXhwIjoxNjg4Mjk5MDM2fQ.YJdxYBg-lQm_ZFf5OgJWTDjMxQTXahwPiqpRNrgXvqc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/64a16328494e8ac3a180596a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"64a16328494e8ac3a180596a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/64a158dae0d3e750ae6560c5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"64a158dae0d3e750ae6560c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?page=1&limit=5",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/product",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODMwMTM2OSwiZXhwIjoxNjg4Mzg3NzY5fQ.Q4_klciVpzsj3x6bdQJ2DNQB6s38-qrWMfG3PdDIhyo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "CBR 1000RR Racing",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Fast Motor Cycle",
+									"type": "text"
+								},
+								{
+									"key": "categorie",
+									"value": "64a03709522c240b92ceb5b7",
+									"type": "text"
+								},
+								{
+									"key": "subcategorie",
+									"value": "64a16fd119b84a2c60f2f775",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "CBR",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2021",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/moham/OneDrive/Desktop/product 1/0227202314070163fcb9059d787.jpg",
+										"/C:/Users/moham/OneDrive/Desktop/product 1/0227202314070563fcb9096d4d8.jpg",
+										"/C:/Users/moham/OneDrive/Desktop/product 1/0227202314071063fcb90e91c3f.jpg",
+										"/C:/Users/moham/OneDrive/Desktop/product 1/0227202314071263fcb910bfefa.jpg"
+									]
+								},
+								{
+									"key": "kilometers",
+									"value": "42137",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "235000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_product}}",
+							"host": [
+								"{{url_product}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODIxMjYzNiwiZXhwIjoxNjg4Mjk5MDM2fQ.YJdxYBg-lQm_ZFf5OgJWTDjMxQTXahwPiqpRNrgXvqc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_product}}/",
+							"host": [
+								"{{url_product}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODMwMTM2OSwiZXhwIjoxNjg4Mzg3NzY5fQ.Q4_klciVpzsj3x6bdQJ2DNQB6s38-qrWMfG3PdDIhyo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_product}}/id",
+							"host": [
+								"{{url_product}}"
+							],
+							"path": [
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_product}}/64a1864a1e3d3754a0af2f13",
+							"host": [
+								"{{url_product}}"
+							],
+							"path": [
+								"64a1864a1e3d3754a0af2f13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_product}}",
+							"host": [
+								"{{url_product}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/user",
+			"item": [
+				{
+					"name": "GET_ALL",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODMwMTM2OSwiZXhwIjoxNjg4Mzg3NzY5fQ.Q4_klciVpzsj3x6bdQJ2DNQB6s38-qrWMfG3PdDIhyo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{main_url}}/user",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "me",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PROFILE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODMwMTM2OSwiZXhwIjoxNjg4Mzg3NzY5fQ.Q4_klciVpzsj3x6bdQJ2DNQB6s38-qrWMfG3PdDIhyo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{main_url}}/user/me",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWYxZmMyMDg4NzlhZGFlY2I5YjE1MiIsInVzZXJuYW1lIjoibW83eCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4ODMwMTM2OSwiZXhwIjoxNjg4Mzg3NzY5fQ.Q4_klciVpzsj3x6bdQJ2DNQB6s38-qrWMfG3PdDIhyo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{main_url}}/user/64a08f165cee70abab1f7712",
+							"host": [
+								"{{main_url}}"
+							],
+							"path": [
+								"user",
+								"64a08f165cee70abab1f7712"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
