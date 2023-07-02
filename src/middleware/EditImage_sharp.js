@@ -6,9 +6,10 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename);
 
 import SubcategorieSchema from "../schema/Subcategorie.schema.js";
+import ApiError from "../util/ApiError.js";
 
 
-const edit = async (req , res , next) => {
+const editOne = async (req , res , next) => {
         if(req.file === undefined)
         {
                return next();
@@ -31,4 +32,18 @@ const edit = async (req , res , next) => {
   
 
 }
-export default edit;
+
+const filterImages = async (req , res , next) => {
+        const AllFile = req.files;
+        let imageArray = [];
+
+        AllFile.forEach(element => {
+           imageArray.push(element.filename);  
+        });
+        req.body.images = imageArray;
+        next();
+}
+export {
+editOne,
+filterImages
+} 

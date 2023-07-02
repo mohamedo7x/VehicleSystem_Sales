@@ -6,13 +6,13 @@ const globalMiddleware  = (error , req , res , next) => {
     const dev = process.env.devMode || 'false';
     let development = dev.startsWith('f') ? false : true;
 
-    if(development === false ) return res.status(error.statusCode).json({
+    if(development === false ) return res.status(error.statusCode || 500).json({
         message: error.message,
         status: error.status,
         error: error,
     })
     
-    res.status(error.statusCode).json({
+    res.status(error.statusCode || 500).json({
         message: error.message,
         status: error.status,
         error: error,

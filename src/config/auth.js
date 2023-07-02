@@ -19,7 +19,7 @@ const protectRoute = async (req, res, next) => {
         req.user = token;
         next();
     } catch (error) {
-      console.log(error)
+      next(error)
     }
 
 }

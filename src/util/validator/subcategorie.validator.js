@@ -11,7 +11,7 @@ const Create_SubCategorieValidator = [
     .isLength({max : 20}).withMessage('Filed Name is to long').custom(async val => {
         const Subcategorie = await SubcategorieSchema.findOne({name : val})
         if(Subcategorie){
-            return Promise.reject(new ApiError('SubCategorie Already exisit'))
+            return Promise.reject(new ApiError('SubCategorie Already exisit' ,401))
         }
         return true;
     }),
