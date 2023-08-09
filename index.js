@@ -31,6 +31,7 @@ app.use(`/${process.env.API}/subcategorie` , SubCategorieRoute);
 app.use(`/${process.env.API}/product` , ProdcutRoute);
 app.use(`/${process.env.API}/user` , UserRoute);
 
+app.get('/helthz' , (req , res)=> {res.status(200).send('OK)})
 
 app.use('*' , (req , res , next)=> {
    next(new ApiError(`Route ${req.url}  Not exisit` , 404))
