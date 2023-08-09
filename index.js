@@ -43,7 +43,7 @@ async function server () {
      // const port = process.env.PORT || 5000;
      connectDB;
      console.log(Color.green('enjoy ;)'))
-    app.listen(process.env.PORT || 3000 , console.log(`http://localhost:${port}`))
+    app.listen(process.env.PORT || 3000 , console.log(`http://localhost:3000`))
    } catch (error) {
         console.log(error)
    }
