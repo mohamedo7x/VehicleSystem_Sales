@@ -40,10 +40,10 @@ app.use(errorHandling);
 async function server () {
    
    try {
-     const port = process.env.PORT || 5000;
+     // const port = process.env.PORT || 5000;
      connectDB;
      console.log(Color.green('enjoy ;)'))
-    app.listen(port , console.log(`http://localhost:${port}`))
+    app.listen(process.env.PORT || 3000 , console.log(`http://localhost:${port}`))
    } catch (error) {
         console.log(error)
    }
