@@ -11,8 +11,7 @@ The backend is built with a focus on efficiency, scalability, and security, prov
 - **API Endpoints:** Defines a set of RESTful API endpoints that enable communication between the frontend and backend, supporting various operations such as vehicle listing, user profile management, and transaction handling.
 - **Business Logic:** Enforces the core business rules and logic of the platform, ensuring consistent and reliable behavior.
 - **Scalability:** Designed to handle a growing user base and increasing data volume while maintaining performance.
-- **Security:** Implements best practices for securing sensitive data, preventing common security vulnerabilities, and ensuring a safe user experience.
-- **Documentation:** Provides detailed documentation for developers to understand how to interact with the backend, including API endpoints, request/response formats, and authentication methods.
+- **Security:** Implements best practices for securing sensitive data, preventing common security vulnerabilities, and ensuring a safe 
 
 ## Tech Stack
 
@@ -33,6 +32,20 @@ To set up the VehicleSystem_Sales Backend locally, follow these steps:
 3. **Install Dependencies:** `npm install` or `pip install -r requirements.txt` depending on your tech stack.
 4. **Set Up Configuration:** Configure database connections, authentication methods, and other environment-specific settings.
 5. **Run the Backend:** Use `npm start` or `python manage.py runserver` to start the backend server.
+
+# Environment Variables
+
+&nbsp;
+
+```ENV
+PORT = 3000
+MOGO_DB = 
+devmode = 
+SECRET_KEY = 
+API = api/v1
+```
+
+&nbsp;
 
 ## Contribution Guidelines
 
